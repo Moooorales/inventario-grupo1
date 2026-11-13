@@ -9,6 +9,6 @@ import java.util.List;
 public interface MovimientoInventarioRepository extends JpaRepository<MovimientoInventario, Long> {
 
     // Consulta personalizada 2: Movimientos por producto ordenados por fecha desc
-    @Query("SELECT m FROM MovimientoInventario m WHERE m.producto.id = :productoId ORDER BY m.fecha DESC")
+    @Query("SELECT m FROM MovimientoInventario m WHERE m.producto.id = :productoId ORDER BY m.fechaMovimiento DESC")
     List<MovimientoInventario> obtenerMovimientosPorProducto(@Param("productoId") Long productoId);
 }
