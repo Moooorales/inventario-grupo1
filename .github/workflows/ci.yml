@@ -37,7 +37,9 @@ jobs:
           distribution: 'temurin'
 
       - name: Ejecutar pruebas y compilacion
-        run: ./mvnw clean verify
+        run: |
+          chmod +x mvnw
+          ./mvnw clean verify
         env:
           SPRING_DATASOURCE_URL: jdbc:postgresql://localhost:5432/inventario_db
           SPRING_DATASOURCE_USERNAME: postgres
